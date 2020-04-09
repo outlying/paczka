@@ -8,7 +8,7 @@
     <fragment
             android:id="@+id/navigation_home"
             android:name="com.antyzero.paczka.app.ui.screen.home.HomeFragment"
-            android:label="@string/title_home"
+            android:label="@string/title_parcels"
             tools:layout="@layout/fragment_home" />
 
     <fragment
