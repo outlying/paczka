@@ -42,6 +42,10 @@ buildscript {
                     "android"     : "3.6.2",
                     "dependencies": "0.28.0"
             ],
+            "threeten": [
+                    "android": "1.2.3",
+                    "java"   : "1.4.3"
+            ],
             "truth"   : "1.0.1"
     ]
 
@@ -66,6 +70,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+    }
+
+    configurations.all {
+        resolutionStrategy.force "org.threeten:threetenbp:${versions.threeten.java}:no-tzdb"
     }
 }
 

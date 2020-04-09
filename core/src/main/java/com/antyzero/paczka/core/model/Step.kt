@@ -6,6 +6,7 @@ package com.antyzero.paczka.core.model
  * Notes:
  *
  * DPD - date, hour, description, department
+ * InPost - status, origin_status, agency, datetime
  */
 class Step {
 }
