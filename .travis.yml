@@ -1,0 +1,27 @@
+#
+# This is generated .travis.yml file, to make actual changes please edit file:
+# dev/travis/.travis.yml
+#
+
+language: android
+dist: trusty
+android:
+  components:
+    - tools
+    - platform-tools
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+
+install:
+  - echo yes | sdkmanager "platforms;android-29" > /dev/null
+
+script:
+  - ./gradlew build
