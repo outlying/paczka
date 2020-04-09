@@ -1,0 +1,104 @@
+{
+   "tracking_number":"655300309030347116239731",
+   "service":"inpost_locker_allegro_smart",
+   "type":"inpost_locker_allegro_smart",
+   "status":"delivered",
+   "custom_attributes":{
+      "size":"A",
+      "target_machine_id":"KRA32A",
+      "dropoff_machine_id":"SZN01M",
+      "target_machine_detail":{
+         "name":"KRA32A",
+         "opening_hours":"24\/7",
+         "location_description":"Stacja paliw Lotos",
+         "location":{
+            "latitude":50.04001,
+            "longitude":19.92465
+         },
+         "address":{
+            "line1":"Kapelanka 14",
+            "line2":"30-347 Krak\u00f3w"
+         },
+         "type":[
+            "parcel_locker"
+         ]
+      },
+      "dropoff_machine_detail":{
+         "name":"SZN01M",
+         "opening_hours":"24\/7",
+         "location_description":"Przy sklepie spo\u017cywczym",
+         "location":{
+            "latitude":51.19832,
+            "longitude":16.60984
+         },
+         "address":{
+            "line1":"\u015aredzka 15",
+            "line2":"55-300 Szczepan\u00f3w"
+         },
+         "type":[
+            "parcel_locker"
+         ]
+      }
+   },
+   "tracking_details":[
+      {
+         "status":"delivered",
+         "origin_status":"DOR",
+         "agency":null,
+         "datetime":"2020-04-08T17:06:36.000+02:00"
+      },
+      {
+         "status":"ready_to_pickup",
+         "origin_status":"UWP",
+         "agency":null,
+         "datetime":"2020-04-08T13:00:30.000+02:00"
+      },
+      {
+         "status":"out_for_delivery",
+         "origin_status":"PDD_2",
+         "agency":null,
+         "datetime":"2020-04-08T08:34:20.000+02:00"
+      },
+      {
+         "status":"adopted_at_source_branch",
+         "origin_status":"PWO",
+         "agency":null,
+         "datetime":"2020-04-08T04:26:47.000+02:00"
+      },
+      {
+         "status":"sent_from_source_branch",
+         "origin_status":"WZO",
+         "agency":null,
+         "datetime":"2020-04-07T20:32:41.000+02:00"
+      },
+      {
+         "status":"adopted_at_source_branch",
+         "origin_status":"PWO",
+         "agency":null,
+         "datetime":"2020-04-07T17:16:23.000+02:00"
+      },
+      {
+         "status":"taken_by_courier",
+         "origin_status":"OZPA",
+         "agency":null,
+         "datetime":"2020-04-07T13:28:35.000+02:00"
+      },
+      {
+         "status":"dispatched_by_sender",
+         "origin_status":"NWP",
+         "agency":null,
+         "datetime":"2020-04-06T15:57:38.000+02:00"
+      },
+      {
+         "status":"confirmed",
+         "origin_status":"PPN",
+         "agency":null,
+         "datetime":"2020-04-06T13:25:12.000+02:00"
+      }
+   ],
+   "expected_flow":[
+
+   ],
+   "created_at":"2020-04-06T13:24:49.316+02:00",
+   "updated_at":"2020-04-08T17:06:54.382+02:00"
+}

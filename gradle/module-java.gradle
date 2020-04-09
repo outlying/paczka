@@ -1,8 +1,13 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
+apply from: rootProject.file("./gradle/dependencies-kotlin.gradle")
+
+test {
+    useJUnitPlatform()
+}
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin.base}"
+
 }
 
 sourceCompatibility = "8"
