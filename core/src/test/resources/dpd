@@ -1,0 +1,85 @@
+<div xmlns:xs="http://www.w3.org/2001/XMLSchema" class="single-package"><input type="hidden" value="13035101999600" class="js-waybill"><input type="hidden" value="13035101999600" class="js-waybill-paczki"><fieldset class="compact">
+      <div class="form-group"><span class="label">Przesyłka</span><span class="input"><span class="input-text">13035101999600</span></span></div>
+      <div class="form-group"><label>Paczki w przesyłce</label><span class="input"><select name="parcel" class="custom-select">
+               <option value="13035101999600">13035101999600</option></select></span></div>
+      <div class="form-group"><span class="label">Paczka</span><span class="input"><span class="input-text">13035101999600&nbsp;
+               </span></span></div>
+      <div class="form-group"><span class="label">Jesteś odbiorcą? Możesz samodzielnie zarządzać przesyłką</span><span class="input"><a href="https://mojapaczka.dpd.com.pl/login?parcel=13035101999600">
+               <div class="column arrow"><span class="btn--arrow-right btn--no-text"></span></div></a></span><span class="label l-info"><span class="l-info">Portal pozwala na przekierowanie, zmianę daty doręczenia, rezygnację z paczki i przekierowanie do punktu Pickup</span></span></div>
+      <div class="form-group"><span class="label l-info"></span></div>
+      <div class="subform js-package-captcha" style="display: none;">
+         <p>, należy uzupełnić <span class="bolded">jedno z poniższych pól</span></p>
+         <div class="form-group"><span class="js-incorrect-receiver-postal-code" style="display: none;">*</span><span class="label">Kod pocztowy odbiorcy</span><span class="input"><input class="js-receiver-postal-code" type="text" name="receiver-post-code"></span></div>
+         <div class="form-group"><span class="js-incorrect-sender-postal-code" style="display: none;">*</span><span class="bolded">lub</span> <span class="label">Kod pocztowy nadawcy</span><span class="input"><input class="js-sender-postal-code" type="text" name="sender-post-code"></span></div>
+         <div class="form-group"><span class="js-incorrect-receiver-phone" style="display: none;">*</span><span class="bolded">lub</span> <span class="label">Numer telefonu odbiorcy</span><span class="input"><input class="js-receiver-phone" type="text" name="receiver-phone"></span></div>
+         <div class="form-group"><span class="js-incorrect-receiver-email" style="display: none;">*</span><span class="bolded">lub</span> <span class="label">Email odbiorcy</span><span class="input"><input class="js-receiver-email" type="text" name="receiver-email"></span></div><br><div class="form-group"><span class="js-incorrect-captcha" style="display: none;">*</span><span class="bolded">oraz</span> <span class="label">Przepisz kod z obrazka</span><span class="input input-captcha"><img class="js-captcha-img"><input type="text" name="captcha" class="js-captcha-input" maxlength="5"></span></div>
+         <div class="form-group"><button type="button" class="btn-submit js-solve-captcha">Pokaż</button></div><span class="js-incorrect-legend" style="display: none;">*
+            pole uzupełnione nieprawidłowo.
+            </span></div>
+      <div class="js-package-details subform" style="display: none;"></div>
+   </fieldset>
+   <fieldset class="compact">
+      <h3>Historia przesyłki</h3>
+      <div class="table-wrapper-400">
+         <table class="table-track">
+            <thead>
+               <th>Data</th>
+               <th>Godzina</th>
+               <th>Opis</th>
+               <th>Oddział</th>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>2020-04-08</td>
+                  <td>11:00:38</td>
+                  <td>Przesyłka doręczona <br>Odbiorca:&nbsp;IWO
+                  </td>
+                  <td>KR2</td>
+               </tr>
+               <tr>
+                  <td>2020-04-08</td>
+                  <td>10:17:14</td>
+                  <td>Powiadomienie mail</td>
+                  <td>WA1</td>
+               </tr>
+               <tr>
+                  <td>2020-04-08</td>
+                  <td>10:04:10</td>
+                  <td>Powiadomienie SMS</td>
+                  <td>WA1</td>
+               </tr>
+               <tr>
+                  <td>2020-04-08</td>
+                  <td>10:01:44</td>
+                  <td>Wysłano powiadomienie</td>
+                  <td>KR2</td>
+               </tr>
+               <tr>
+                  <td>2020-04-08</td>
+                  <td>09:48:00</td>
+                  <td>Wydanie przesyłki do doręczenia</td>
+                  <td>KR2</td>
+               </tr>
+               <tr>
+                  <td>2020-04-08</td>
+                  <td>03:36:28</td>
+                  <td>Przyjęcie przesyłki w oddziale DPD </td>
+                  <td>KR2</td>
+               </tr>
+               <tr>
+                  <td>2020-04-07</td>
+                  <td>21:20:44</td>
+                  <td>Przesyłka odebrana przez Kuriera</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>2020-04-06</td>
+                  <td>12:34:07</td>
+                  <td>Zarejestrowano dane przesyłki, przesyłka jeszcze nienadana</td>
+                  <td></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </fieldset>
+</div>

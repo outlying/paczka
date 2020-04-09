@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="title_parcels">@string/parcels</string>
-
-    <string name="parcels">Parcels</string>
-
-
+    <string name="title_parcels">Parcels</string>
+    <string name="title_archive">Archive</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

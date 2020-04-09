@@ -3,3 +3,5 @@ include ':app'
 include ':app-core'
 include ':app-usecases'
 include ':app-viewmodels'
+
+include ':core'
