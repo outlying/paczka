@@ -7,7 +7,8 @@ test {
 }
 
 dependencies {
-
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${versions.junit.jupiter}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${versions.junit.jupiter}"
 }
 
 sourceCompatibility = "8"
