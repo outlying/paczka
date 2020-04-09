@@ -5,7 +5,4 @@ package com.antyzero.paczka.core.tracker
  */
 private class Null
 
-fun readResource(file: String): String {
-
-    return Null::class.java.getResource(file).readText()
-}
+fun readResource(file: String) = Null::class.java.getResource("/$file").readText()
