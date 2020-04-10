@@ -13,4 +13,10 @@ class HistoryReadersTest {
 
         assertThat(steps).hasSize(8)
     }
+
+    @Test
+    internal fun inPost() {
+        
+
+    }
 }
