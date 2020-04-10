@@ -1,5 +1,6 @@
 package com.antyzero.paczka.core.tracker.dpd
 
+import com.antyzero.paczka.core.model.History
 import com.antyzero.paczka.core.model.Step
 import com.antyzero.paczka.core.tracker.HistoryReader
 import org.threeten.bp.LocalDate
@@ -24,14 +25,14 @@ object DpdHistoryReader : HistoryReader {
         setOf(IGNORE_CASE, DOT_MATCHES_ALL)
     )
 
-    override suspend fun steps(input: String): List<Step> {
+    override suspend fun history(input: String): History {
 
         val tbody = REGEX_TBODY
             .findAll(input)
             .first()
             .let { it.groupValues[0] }
 
-        return REGEX_TR
+        val steps = REGEX_TR
             .findAll(tbody)
             .map { it.groupValues.subList(1, 5) }
             .map {
@@ -39,6 +40,8 @@ object DpdHistoryReader : HistoryReader {
                 Step(localDateTime)
             }
             .toList()
+
+        return History(steps)
     }
 
     private fun createLocalDateTime(date: String, time: String): LocalDateTime {

@@ -1,9 +1,12 @@
 package com.antyzero.paczka.core.tracker.inpost
 
+import com.antyzero.paczka.core.model.History
 import com.antyzero.paczka.core.model.Step
 import com.antyzero.paczka.core.tracker.HistoryReader
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
@@ -17,11 +20,13 @@ object InPostHistoryReader : HistoryReader {
         "yyyy-MM-dd'T'HH:mm:ss.SSS'+'x"
     )
 
-    override suspend fun steps(input: String): List<Step> {
-        val result = moshi.adapter(Data::class.java).fromJson(input)
-            ?: throw IllegalStateException("Unable to deserialize input")
+    override suspend fun history(input: String): History {
+        val result = withContext(Dispatchers.IO) {
+            moshi.adapter(Data::class.java).fromJson(input)
+                ?: throw IllegalStateException("Unable to deserialize input")
+        }
 
-        return result
+        val steps = result
             .tracking_details
             .map {
                 val localDateTime = LocalDateTime.parse(
@@ -30,6 +35,8 @@ object InPostHistoryReader : HistoryReader {
                 )
                 Step(localDateTime)
             }
+
+        return History(steps)
     }
 
     private data class Data(val tracking_details: List<Item>)

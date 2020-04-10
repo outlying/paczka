@@ -10,14 +10,14 @@ class HistoryReadersTest {
 
     @Test
     internal fun dpd() = runBlocking {
-        val steps = DpdHistoryReader.steps(readResource("dpd"))
+        val steps = DpdHistoryReader.history(readResource("dpd")).steps
 
         assertThat(steps).hasSize(8)
     }
 
     @Test
     internal fun inPost() = runBlocking {
-        val steps = InPostHistoryReader.steps(readResource("inpost"))
+        val steps = InPostHistoryReader.history(readResource("inpost")).steps
 
         assertThat(steps).hasSize(9)
     }

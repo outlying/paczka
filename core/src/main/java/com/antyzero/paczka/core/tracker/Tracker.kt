@@ -1,8 +1,8 @@
 package com.antyzero.paczka.core.tracker
 
-import com.antyzero.paczka.core.model.Step
+import com.antyzero.paczka.core.model.History
 
 interface Tracker {
 
-    suspend fun parcel(parcelId: Any): List<Step>
+    suspend fun parcelHistory(parcelId: Any): History
 }
