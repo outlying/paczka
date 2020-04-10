@@ -2,6 +2,10 @@ package com.antyzero.paczka.core.tracker.dpd
 
 import com.antyzero.paczka.core.model.Step
 import com.antyzero.paczka.core.tracker.HistoryReader
+import org.threeten.bp.LocalDate
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.LocalTime
+import org.threeten.bp.format.DateTimeFormatter
 import kotlin.text.RegexOption.DOT_MATCHES_ALL
 import kotlin.text.RegexOption.IGNORE_CASE
 
@@ -29,8 +33,17 @@ object DpdHistoryReader : HistoryReader {
 
         return REGEX_TR
             .findAll(tbody)
-            .map { it.groupValues }
-            .map { Step() }
+            .map { it.groupValues.subList(1, 5) }
+            .map {
+                val localDateTime = createLocalDateTime(it[0], it[1])
+                Step(localDateTime)
+            }
             .toList()
+    }
+
+    private fun createLocalDateTime(date: String, time: String): LocalDateTime {
+        val localDate = LocalDate.parse(date, DateTimeFormatter.ISO_LOCAL_DATE)
+        val localTime = LocalTime.parse(time)
+        return LocalDateTime.of(localDate, localTime)
     }
 }

@@ -1,5 +1,7 @@
 package com.antyzero.paczka.core.model
 
+import org.threeten.bp.LocalDateTime
+
 /**
  * Representing single step in parcel history
  *
@@ -8,5 +10,6 @@ package com.antyzero.paczka.core.model
  * DPD - date, hour, description, department
  * InPost - status, origin_status, agency, datetime
  */
-class Step {
-}
+data class Step(
+    val dateTime: LocalDateTime? = null
+)
