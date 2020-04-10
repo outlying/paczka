@@ -1,6 +1,7 @@
 package com.antyzero.paczka.core.tracker
 
 import com.antyzero.paczka.core.tracker.dpd.DpdHistoryReader
+import com.antyzero.paczka.core.tracker.inpost.InPostHistoryReader
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
@@ -15,8 +16,9 @@ class HistoryReadersTest {
     }
 
     @Test
-    internal fun inPost() {
-        
+    internal fun inPost() = runBlocking {
+        val steps = InPostHistoryReader.steps(readResource("inpost"))
 
+        assertThat(steps).hasSize(9)
     }
 }
