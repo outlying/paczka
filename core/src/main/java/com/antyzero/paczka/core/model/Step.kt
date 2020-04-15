@@ -11,5 +11,5 @@ import org.threeten.bp.LocalDateTime
  * InPost - status, origin_status, agency, datetime
  */
 data class Step(
-    val dateTime: LocalDateTime? = null
+    val dateTime: LocalDateTime
 )

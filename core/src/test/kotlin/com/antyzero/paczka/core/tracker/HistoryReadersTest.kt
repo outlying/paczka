@@ -2,6 +2,7 @@ package com.antyzero.paczka.core.tracker
 
 import com.antyzero.paczka.core.tracker.dpd.DpdHistoryReader
 import com.antyzero.paczka.core.tracker.inpost.InPostHistoryReader
+import com.antyzero.paczka.core.tracker.ups.UpsHistoryReader
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
@@ -20,5 +21,12 @@ class HistoryReadersTest {
         val steps = InPostHistoryReader.history(readResource("inpost")).steps
 
         assertThat(steps).hasSize(9)
+    }
+
+    @Test
+    internal fun ups() = runBlocking {
+        val steps = UpsHistoryReader.history(readResource("ups")).steps
+
+        assertThat(steps).hasSize(10)
     }
 }
