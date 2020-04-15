@@ -4,11 +4,11 @@ on:
     paths:
       - "**/*.kt"
       - ".github/workflows/ktlint.yml"
-  jobs:
-    ktlint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: "checkout"
-          uses: actions/checkout@v2
-        - name: "ktlint"
-          uses: "vroy/gha-kotlin-linter@v2"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+      - name: "ktlint"
+        uses: "vroy/gha-kotlin-linter@v2"
