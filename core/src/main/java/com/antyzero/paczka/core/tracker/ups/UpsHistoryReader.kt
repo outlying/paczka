@@ -66,6 +66,6 @@ object UpsHistoryReader : HistoryReader {
     private data class ShipmentProgressActivity(
         val date: String,
         val time: String
-        //,val location: String
+        // ,val location: String
     )
 }

@@ -45,9 +45,9 @@ object InPostHistoryReader : HistoryReader {
     private data class Data(val tracking_details: List<Item>)
 
     private data class Item(
-        //val status: String,
-        //val origin_status: String,
-        //val agency: String?,
+        // val status: String,
+        // val origin_status: String,
+        // val agency: String?,
         val datetime: String
     )
 }
