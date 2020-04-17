@@ -1,6 +1,7 @@
 package com.antyzero.paczka.core.tracker
 
 import com.antyzero.paczka.core.tracker.dpd.DpdHistoryReader
+import com.antyzero.paczka.core.tracker.gls.GlsHistoryReader
 import com.antyzero.paczka.core.tracker.inpost.InPostHistoryReader
 import com.antyzero.paczka.core.tracker.ups.UpsHistoryReader
 import com.google.common.truth.Truth.assertThat
@@ -14,6 +15,13 @@ class HistoryReadersTest {
         val steps = DpdHistoryReader.history(readResource("dpd")).steps
 
         assertThat(steps).hasSize(8)
+    }
+
+    @Test
+    internal fun gls() = runBlocking {
+        val steps = GlsHistoryReader.history(readResource("gls.json")).steps
+
+        assertThat(steps).hasSize(4)
     }
 
     @Test
