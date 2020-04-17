@@ -5,6 +5,7 @@ import com.antyzero.paczka.core.tracker.HistoryProvider
 import com.antyzero.paczka.core.tracker.HistoryReader
 import com.antyzero.paczka.core.tracker.Tracker
 
+/*
 class DpdTracker(
     private val historyProvider: HistoryProvider = DpdHistoryProvider,
     private val historyReader: HistoryReader = DpdHistoryReader
@@ -14,3 +15,5 @@ class DpdTracker(
         return historyReader.history(historyProvider.get(parcelId))
     }
 }
+
+ */

@@ -1,10 +1,34 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
+apply plugin: 'jacoco'
 apply from: rootProject.file("./gradle/dependencies-kotlin.gradle")
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
 
 test {
     useJUnitPlatform()
 }
+
+jacoco {
+    toolVersion = versions.jacoco
+}
+
+build.finalizedBy jacocoTestReport
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 0.7
+            }
+        }
+    }
+}
+
+jacocoTestReport.finalizedBy jacocoTestCoverageVerification
 
 dependencies {
 
@@ -16,6 +40,3 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${versions.junit.jupiter}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${versions.junit.jupiter}"
 }
-
-sourceCompatibility = "8"
-targetCompatibility = "8"

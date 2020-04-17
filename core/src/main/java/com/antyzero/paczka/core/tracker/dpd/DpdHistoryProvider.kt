@@ -8,6 +8,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
+/*
 object DpdHistoryProvider : HistoryProvider {
 
     private val okHttpClient = OkHttpClient.Builder().build()
@@ -31,3 +32,4 @@ object DpdHistoryProvider : HistoryProvider {
         }
     }
 }
+ */
