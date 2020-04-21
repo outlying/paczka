@@ -6,6 +6,7 @@ on:
       - ".github/workflows/ktlint.yml"
 jobs:
   build:
+    name: "KtLint"
     runs-on: ubuntu-latest
     steps:
       - name: "checkout"

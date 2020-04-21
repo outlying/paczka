@@ -8,11 +8,11 @@ import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 
-class HistoryReadersTest {
+class ParcelReadersTest {
 
     @Test
     internal fun dpd() = runBlocking {
-        val steps = DpdHistoryReader.history(readResource("dpd")).steps
+        val steps = DpdHistoryReader.history(readResource("dpd")).history
 
         assertThat(steps).hasSize(8)
     }
@@ -29,7 +29,7 @@ class HistoryReadersTest {
 
     @Test
     internal fun gls() = runBlocking {
-        val steps = GlsHistoryReader.history(readResource("gls.json")).steps
+        val steps = GlsHistoryReader.history(readResource("gls.json")).history
 
         assertThat(steps).hasSize(4)
     }
@@ -46,7 +46,7 @@ class HistoryReadersTest {
 
     @Test
     internal fun inPost() = runBlocking {
-        val steps = InPostHistoryReader.history(readResource("inpost")).steps
+        val steps = InPostHistoryReader.history(readResource("inpost")).history
 
         assertThat(steps).hasSize(9)
     }
@@ -63,7 +63,7 @@ class HistoryReadersTest {
 
     @Test
     internal fun ups() = runBlocking {
-        val steps = UpsHistoryReader.history(readResource("ups")).steps
+        val steps = UpsHistoryReader.history(readResource("ups")).history
 
         assertThat(steps).hasSize(10)
     }

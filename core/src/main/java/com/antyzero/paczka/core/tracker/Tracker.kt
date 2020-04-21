@@ -1,8 +1,8 @@
 package com.antyzero.paczka.core.tracker
 
-import com.antyzero.paczka.core.model.History
+import com.antyzero.paczka.core.model.Parcel
 
 interface Tracker {
 
-    suspend fun parcelHistory(parcelId: Any): History
+    suspend fun parcelHistory(parcelId: Any): Parcel
 }

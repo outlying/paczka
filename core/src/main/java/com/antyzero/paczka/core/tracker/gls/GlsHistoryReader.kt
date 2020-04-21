@@ -1,6 +1,6 @@
 package com.antyzero.paczka.core.tracker.gls
 
-import com.antyzero.paczka.core.model.History
+import com.antyzero.paczka.core.model.Parcel
 import com.antyzero.paczka.core.model.Step
 import com.antyzero.paczka.core.tracker.HistoryReader
 import com.squareup.moshi.FromJson
@@ -20,7 +20,7 @@ object GlsHistoryReader : HistoryReader {
         .add(KotlinJsonAdapterFactory())
         .build()
 
-    override suspend fun history(input: String): History {
+    override suspend fun history(input: String): Parcel {
         val result = withContext(Dispatchers.IO) {
             try {
                 requireNotNull(moshi.adapter(Data::class.java).fromJson(input))
@@ -29,7 +29,7 @@ object GlsHistoryReader : HistoryReader {
             }
         }
 
-        return History(steps = result.tuStatus.first().history)
+        return Parcel(history = result.tuStatus.first().history)
     }
 
     private data class Data(
