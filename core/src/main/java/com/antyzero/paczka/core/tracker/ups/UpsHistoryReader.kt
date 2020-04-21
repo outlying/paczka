@@ -1,6 +1,6 @@
 package com.antyzero.paczka.core.tracker.ups
 
-import com.antyzero.paczka.core.model.History
+import com.antyzero.paczka.core.model.Parcel
 import com.antyzero.paczka.core.model.Step
 import com.antyzero.paczka.core.tracker.HistoryReader
 import com.squareup.moshi.Moshi
@@ -26,7 +26,7 @@ object UpsHistoryReader : HistoryReader {
         "h:mm a"
     )
 
-    override suspend fun history(input: String): History {
+    override suspend fun history(input: String): Parcel {
         val result = withContext(Dispatchers.IO) {
             try {
                 requireNotNull(moshi.adapter(Data::class.java).fromJson(input))
@@ -49,7 +49,7 @@ object UpsHistoryReader : HistoryReader {
                 Step(localDateTime)
             }
 
-        return History(steps)
+        return Parcel(steps)
     }
 
     /**
