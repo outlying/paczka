@@ -1,8 +1,7 @@
 package com.antyzero.paczka.app.viewmodels
 
-import org.junit.Test
-
 import org.junit.Assert.assertEquals
+import org.junit.Test
 
 /**
  * Example local unit test, which will execute on the development machine (host).

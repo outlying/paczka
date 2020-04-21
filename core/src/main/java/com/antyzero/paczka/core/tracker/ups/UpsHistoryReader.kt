@@ -28,8 +28,11 @@ object UpsHistoryReader : HistoryReader {
 
     override suspend fun history(input: String): History {
         val result = withContext(Dispatchers.IO) {
-            moshi.adapter(Data::class.java).fromJson(input)
-                ?: throw IllegalStateException("Unable to deserialize input")
+            try {
+                requireNotNull(moshi.adapter(Data::class.java).fromJson(input))
+            } catch (e: Exception) {
+                throw IllegalStateException("Unable to deserialize input")
+            }
         }
 
         val trackDetails = result.trackDetails.firstOrNull()
@@ -53,16 +56,16 @@ object UpsHistoryReader : HistoryReader {
      * Main data container
      */
     private data class Data(
-        val trackDetails: List<TrackDetail> = emptyList()
+        val trackDetails: List<TrackDetail>
     )
 
     private data class TrackDetail(
-        val shipmentProgressActivities: List<ShipmentProgressActivity> = emptyList()
+        val shipmentProgressActivities: List<ShipmentProgressActivity>
     )
 
     private data class ShipmentProgressActivity(
         val date: String,
-        val time: String,
-        val location: String
+        val time: String
+        // ,val location: String
     )
 }

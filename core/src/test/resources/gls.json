@@ -1,0 +1,149 @@
+{
+  "tuStatus": [
+    {
+      "references": [
+        {
+          "type": "UNITNO",
+          "name": "Parcel number:",
+          "value": "54640516147"
+        },
+        {
+          "type": "UNIQUENO",
+          "name": "Track ID",
+          "value": "ZF5U4U9F"
+        },
+        {
+          "type": "GLSREF",
+          "name": "Origin National Reference in Unicode",
+          "value": "54003971"
+        },
+        {
+          "type": "CUSTREF",
+          "name": "Customer's own reference number",
+          "value": "1090700103"
+        }
+      ],
+      "tuNo": "54640516147",
+      "history": [
+        {
+          "time": "06:55:37",
+          "date": "2020-04-17",
+          "address": {
+            "countryName": "Poland",
+            "city": "Skawina",
+            "countryCode": "PL"
+          },
+          "evtDscr": "The parcel has reached the parcel center."
+        },
+        {
+          "time": "19:55:01",
+          "date": "2020-04-16",
+          "address": {
+            "countryName": "Poland",
+            "city": "Strykow",
+            "countryCode": "PL"
+          },
+          "evtDscr": "The parcel has reached the parcel center."
+        },
+        {
+          "time": "19:55:01",
+          "date": "2020-04-16",
+          "address": {
+            "countryName": "Poland",
+            "city": "Strykow",
+            "countryCode": "PL"
+          },
+          "evtDscr": "The parcel was handed over to GLS."
+        },
+        {
+          "time": "07:59:02",
+          "date": "2020-04-15",
+          "address": {
+            "countryName": "Poland",
+            "city": "Wroclaw",
+            "countryCode": "PL"
+          },
+          "evtDscr": "The parcel data was entered into the GLS IT system; the parcel was not yet handed over to GLS."
+        }
+      ],
+      "owners": [
+        {
+          "type": "REQUEST",
+          "code": "PL01"
+        },
+        {
+          "type": "DELIVERY",
+          "code": "PL01"
+        }
+      ],
+      "infos": [
+        {
+          "type": "WEIGHT",
+          "name": "Weight:",
+          "value": "9.81 kg"
+        },
+        {
+          "type": "PRODUCT",
+          "name": "Product:",
+          "value": "BusinessParcel"
+        },
+        {
+          "type": "SERVICES",
+          "name": "Services:",
+          "value": "FlexDeliveryService,"
+        }
+      ],
+      "deliveryOwnerCode": "PL01",
+      "arrivalTime": {
+        "name": "",
+        "value": ""
+      },
+      "progressBar": {
+        "level": 50,
+        "statusText": "In transit",
+        "statusInfo": "INTRANSIT",
+        "statusBar": [
+          {
+            "statusText": "",
+            "status": "PREADVICE",
+            "imageStatus": "COMPLETE",
+            "imageText": "Preadvice"
+          },
+          {
+            "statusText": "The parcel is on its way to the final parcel center.\nFor more information, please see the detailed shipment tracking below.",
+            "status": "INTRANSIT",
+            "imageStatus": "CURRENT",
+            "imageText": "In transit"
+          },
+          {
+            "statusText": "",
+            "status": "INWAREHOUSE",
+            "imageStatus": "PENDING",
+            "imageText": "Final parcel center"
+          },
+          {
+            "statusText": "",
+            "status": "INDELIVERY",
+            "imageStatus": "PENDING",
+            "imageText": "In delivery"
+          },
+          {
+            "statusText": "",
+            "status": "DELIVERED",
+            "imageStatus": "PENDING",
+            "imageText": "Delivered"
+          }
+        ],
+        "evtNos": [
+          "2.0",
+          "2.0",
+          "0.0",
+          "0.100"
+        ],
+        "retourFlag": false,
+        "colourIndex": 3
+      },
+      "changeDeliveryPossible": false
+    }
+  ]
+}

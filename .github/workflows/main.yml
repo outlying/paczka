@@ -11,9 +11,9 @@ jobs:
     name: Standard build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Assemble
-      run: ./gradlew assemble
-    - name: Build
-      run: ./gradlew check
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Assemble
+        run: ./gradlew assemble
+      - name: Build
+        run: ./gradlew check

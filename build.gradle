@@ -31,6 +31,7 @@ buildscript {
                             "material": "1.1.0"
                     ]
             ],
+            "jacoco"  : "0.8.5",
             "junit"   : [
                     "jupiter": "5.1.0"
             ],
