@@ -2,7 +2,7 @@ package com.antyzero.paczka.core.tracker.inpost
 
 import com.antyzero.paczka.core.model.Parcel
 import com.antyzero.paczka.core.model.Step
-import com.antyzero.paczka.core.tracker.HistoryReader
+import com.antyzero.paczka.core.tracker.ParcelDataReader
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Dispatchers
@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
-object InPostHistoryReader : HistoryReader {
+object InPostParcelDataReader : ParcelDataReader {
 
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
@@ -20,7 +20,7 @@ object InPostHistoryReader : HistoryReader {
         "yyyy-MM-dd'T'HH:mm:ss.SSS'+'x"
     )
 
-    override suspend fun history(input: String): Parcel {
+    override suspend fun read(input: String): Parcel {
         val result = withContext(Dispatchers.IO) {
             try {
                 requireNotNull(moshi.adapter(Data::class.java).fromJson(input))

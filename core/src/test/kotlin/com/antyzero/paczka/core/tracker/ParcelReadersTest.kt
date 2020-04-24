@@ -1,9 +1,9 @@
 package com.antyzero.paczka.core.tracker
 
-import com.antyzero.paczka.core.tracker.dpd.DpdHistoryReader
-import com.antyzero.paczka.core.tracker.gls.GlsHistoryReader
-import com.antyzero.paczka.core.tracker.inpost.InPostHistoryReader
-import com.antyzero.paczka.core.tracker.ups.UpsHistoryReader
+import com.antyzero.paczka.core.tracker.dpd.DpdParcelDataReader
+import com.antyzero.paczka.core.tracker.gls.GlsParcelDataReader
+import com.antyzero.paczka.core.tracker.inpost.InPostParcelDataReader
+import com.antyzero.paczka.core.tracker.ups.UpsParcelDataReader
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
@@ -12,7 +12,7 @@ class ParcelReadersTest {
 
     @Test
     internal fun dpd() = runBlocking {
-        val steps = DpdHistoryReader.history(readResource("dpd")).history
+        val steps = DpdParcelDataReader.read(readResource("dpd")).history
 
         assertThat(steps).hasSize(8)
     }
@@ -20,7 +20,7 @@ class ParcelReadersTest {
     @Test
     internal fun `dps incorrect input`() = runBlocking {
         try {
-            DpdHistoryReader.history("[]")
+            DpdParcelDataReader.read("[]")
         } catch (e: Exception) {
             assertThat(e).isInstanceOf(Exception::class.java)
         }
@@ -29,7 +29,7 @@ class ParcelReadersTest {
 
     @Test
     internal fun gls() = runBlocking {
-        val steps = GlsHistoryReader.history(readResource("gls.json")).history
+        val steps = GlsParcelDataReader.read(readResource("gls.json")).history
 
         assertThat(steps).hasSize(4)
     }
@@ -37,7 +37,7 @@ class ParcelReadersTest {
     @Test
     internal fun `gls incorrect input`() = runBlocking {
         try {
-            GlsHistoryReader.history("[]")
+            GlsParcelDataReader.read("[]")
         } catch (e: Exception) {
             assertThat(e).isInstanceOf(Exception::class.java)
         }
@@ -46,7 +46,7 @@ class ParcelReadersTest {
 
     @Test
     internal fun inPost() = runBlocking {
-        val steps = InPostHistoryReader.history(readResource("inpost")).history
+        val steps = InPostParcelDataReader.read(readResource("inpost")).history
 
         assertThat(steps).hasSize(9)
     }
@@ -54,7 +54,7 @@ class ParcelReadersTest {
     @Test
     internal fun `inPost incorrect input`() = runBlocking {
         try {
-            InPostHistoryReader.history("[]")
+            InPostParcelDataReader.read("[]")
         } catch (e: Exception) {
             assertThat(e).isInstanceOf(Exception::class.java)
         }
@@ -63,7 +63,7 @@ class ParcelReadersTest {
 
     @Test
     internal fun ups() = runBlocking {
-        val steps = UpsHistoryReader.history(readResource("ups")).history
+        val steps = UpsParcelDataReader.read(readResource("ups")).history
 
         assertThat(steps).hasSize(10)
     }
@@ -71,7 +71,7 @@ class ParcelReadersTest {
     @Test
     internal fun `ups incorrect input`() = runBlocking {
         try {
-            UpsHistoryReader.history("[]")
+            UpsParcelDataReader.read("[]")
         } catch (e: Exception) {
             assertThat(e).isInstanceOf(Exception::class.java)
         }
