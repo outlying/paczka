@@ -16,13 +16,20 @@ jacoco {
 
 build.finalizedBy jacocoTestReport
 
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            element = 'CLASS'
-            limit {
-                counter = 'INSTRUCTION'
-                minimum = 0.7
+// Allows to set and use jacocoExcludes via extension
+project.afterEvaluate {
+    jacocoTestCoverageVerification {
+        violationRules {
+            rule {
+                element = 'CLASS'
+                limit {
+                    counter = 'INSTRUCTION'
+                    minimum = 0.7
+                }
+
+                if (project.hasProperty("jacocoExcludes")) {
+                    excludes = project.property("jacocoExcludes")
+                }
             }
         }
     }

@@ -1,6 +1,13 @@
 apply from: rootProject.file("./gradle/module-java.gradle")
 
+ext.jacocoExcludes = [
+        // Contains only one variable
+        'com.antyzero.paczka.core.tracker.dpd.DpdParcelDataProvider.Companion'
+]
+
 dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:${versions.moshi}"
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:${versions.okhttp}"
 }
