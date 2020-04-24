@@ -16,4 +16,3 @@ fun server(block: MockWebServer.() -> Unit): MockWebServer = MockWebServer().app
     block.invoke(this)
     start()
 }
-

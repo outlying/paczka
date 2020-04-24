@@ -9,7 +9,6 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
-
 class DpdParcelDataProvider(
     private val okHttpClient: OkHttpClient = OkHttpClient.Builder().build(),
     private val trackingUrl: HttpUrl = DEFAULT_TRACKING_URL
