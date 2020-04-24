@@ -2,7 +2,7 @@ package com.antyzero.paczka.core.tracker.ups
 
 import com.antyzero.paczka.core.model.Parcel
 import com.antyzero.paczka.core.model.Step
-import com.antyzero.paczka.core.tracker.HistoryReader
+import com.antyzero.paczka.core.tracker.ParcelDataReader
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +12,7 @@ import org.threeten.bp.LocalDateTime
 import org.threeten.bp.LocalTime
 import org.threeten.bp.format.DateTimeFormatter
 
-object UpsHistoryReader : HistoryReader {
+object UpsParcelDataReader : ParcelDataReader {
 
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
@@ -26,7 +26,7 @@ object UpsHistoryReader : HistoryReader {
         "h:mm a"
     )
 
-    override suspend fun history(input: String): Parcel {
+    override suspend fun read(input: String): Parcel {
         val result = withContext(Dispatchers.IO) {
             try {
                 requireNotNull(moshi.adapter(Data::class.java).fromJson(input))

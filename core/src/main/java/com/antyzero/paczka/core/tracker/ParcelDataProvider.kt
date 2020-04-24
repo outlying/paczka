@@ -3,7 +3,7 @@ package com.antyzero.paczka.core.tracker
 /**
  * Gathers information about given parcel ID
  */
-interface HistoryProvider {
+interface ParcelDataProvider {
 
     /**
      * Gathers parcel information, usually from external system

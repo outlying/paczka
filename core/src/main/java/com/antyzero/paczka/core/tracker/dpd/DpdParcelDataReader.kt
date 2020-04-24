@@ -2,7 +2,7 @@ package com.antyzero.paczka.core.tracker.dpd
 
 import com.antyzero.paczka.core.model.Parcel
 import com.antyzero.paczka.core.model.Step
-import com.antyzero.paczka.core.tracker.HistoryReader
+import com.antyzero.paczka.core.tracker.ParcelDataReader
 import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.LocalTime
@@ -10,7 +10,7 @@ import org.threeten.bp.format.DateTimeFormatter
 import kotlin.text.RegexOption.DOT_MATCHES_ALL
 import kotlin.text.RegexOption.IGNORE_CASE
 
-object DpdHistoryReader : HistoryReader {
+object DpdParcelDataReader : ParcelDataReader {
 
     private val REGEX_TBODY = "<tbody>.+?</tbody>".toRegex(
         setOf(IGNORE_CASE, DOT_MATCHES_ALL)
@@ -25,7 +25,7 @@ object DpdHistoryReader : HistoryReader {
         setOf(IGNORE_CASE, DOT_MATCHES_ALL)
     )
 
-    override suspend fun history(input: String): Parcel {
+    override suspend fun read(input: String): Parcel {
 
         val tbody = REGEX_TBODY
             .findAll(input)
