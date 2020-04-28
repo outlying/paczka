@@ -33,6 +33,7 @@ dependencies {
     implementation("com.jakewharton.threetenabp:threetenabp:${versions.threeten.android}") {
         exclude group: 'org.threeten', module: 'threetenbp'
     }
+    implementation "com.jakewharton.timber:timber-android:${versions.timber}"
 
     // Kotlin dependencies for Android modules
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin.coroutines}"
