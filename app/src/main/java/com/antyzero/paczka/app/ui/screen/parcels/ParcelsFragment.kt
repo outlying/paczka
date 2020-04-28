@@ -1,4 +1,4 @@
-package com.antyzero.paczka.app.ui.screen.dashboard
+package com.antyzero.paczka.app.ui.screen.parcels
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.antyzero.paczka.app.R
 
-class DashboardFragment : Fragment() {
+class ParcelsFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var parcelsViewModel: ParcelsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        parcelsViewModel =
+            ViewModelProvider(this).get(ParcelsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_parcels, container, false)
+        val textView: TextView = root.findViewById(R.id.text_home)
+        parcelsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

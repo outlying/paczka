@@ -7,15 +7,15 @@
 
     <fragment
             android:id="@+id/navigation_home"
-            android:name="com.antyzero.paczka.app.ui.screen.home.HomeFragment"
+            android:name="com.antyzero.paczka.app.ui.screen.parcels.ParcelsFragment"
             android:label="@string/title_parcels"
-            tools:layout="@layout/fragment_home" />
+            tools:layout="@layout/fragment_parcels" />
 
     <fragment
             android:id="@+id/navigation_dashboard"
-            android:name="com.antyzero.paczka.app.ui.screen.dashboard.DashboardFragment"
+            android:name="com.antyzero.paczka.app.ui.screen.archive.ArchiveFragment"
             android:label="@string/title_archive"
-            tools:layout="@layout/fragment_dashboard" />
+            tools:layout="@layout/fragment_archive" />
 
     <fragment
             android:id="@+id/navigation_notifications"
