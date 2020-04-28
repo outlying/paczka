@@ -1,4 +1,4 @@
-package com.antyzero.paczka.app.ui.screen.home
+package com.antyzero.paczka.app.ui.screen.archive
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.antyzero.paczka.app.R
 
-class ParcelsFragment : Fragment() {
+class ArchiveFragment : Fragment() {
 
-    private lateinit var parcelsViewModel: ParcelsViewModel
+    private lateinit var archiveViewModel: ArchiveViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        parcelsViewModel =
-            ViewModelProvider(this).get(ParcelsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_parcels, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        parcelsViewModel.text.observe(viewLifecycleOwner, Observer {
+        archiveViewModel =
+            ViewModelProvider(this).get(ArchiveViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_archive, container, false)
+        val textView: TextView = root.findViewById(R.id.text)
+        archiveViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
