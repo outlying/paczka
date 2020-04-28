@@ -49,6 +49,7 @@ buildscript {
                     "android": "1.2.3",
                     "java"   : "1.4.3"
             ],
+            "timber"  : "5.0.0-SNAPSHOT",
             "truth"   : "1.0.1"
     ]
 
