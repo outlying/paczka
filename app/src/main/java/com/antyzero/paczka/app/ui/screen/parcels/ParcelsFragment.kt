@@ -18,7 +18,7 @@ class ParcelsFragment : Fragment(R.layout.fragment_parcels) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-        recyclerView.adapter = ParcelAdapter().apply {
+        recyclerView.adapter = ParcelAdapter.apply {
             submitList((0..5).map { ParcelUi.Simple(it) })
         }
     }
