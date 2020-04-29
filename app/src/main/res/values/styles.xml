@@ -1,20 +1,28 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/base_light</item>
-
-
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/base_vivid</item>
         <item name="colorPrimaryDark">@color/base_dark</item>
         <item name="colorAccent">@color/accent</item>
-        <item name="actionBarTheme">@style/AppTheme.AppBarOverlay</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:textColorPrimary">@color/base_light</item>
+    <style name="ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/base_vivid</item>
+        <item name="titleTextAppearance">@style/ToolbarTitleTextAppearance</item>
+        <item name="subtitleTextAppearance">@style/ToolbarSubTitleTextAppearance</item>
+    </style>
+
+    <style name="ToolbarTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/base_light</item>
+    </style>
+
+    <style name="ToolbarSubTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/base_light</item>
     </style>
 
     <style name="BottomNavigation">
