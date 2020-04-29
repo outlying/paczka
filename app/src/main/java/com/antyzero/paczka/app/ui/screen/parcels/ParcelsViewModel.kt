@@ -8,11 +8,11 @@ import kotlinx.coroutines.flow.asFlow
 
 class ParcelsViewModel : ViewModel() {
 
-    private val _quote = ConflatedBroadcastChannel<List<ParcelUi.Simple>>().apply {
+    private val _activeParcels = ConflatedBroadcastChannel<List<ParcelUi.Simple>>().apply {
         val parcels = (0..10).map { ParcelUi.Simple(it) }
         offer(parcels)
     }
 
-    val quote: Flow<List<ParcelUi.Simple>>
-        get() = _quote.asFlow()
+    val activeParcels: Flow<List<ParcelUi.Simple>>
+        get() = _activeParcels.asFlow()
 }

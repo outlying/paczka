@@ -1,11 +1,13 @@
 package com.antyzero.paczka.app.ui.adapter
 
+import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.antyzero.paczka.app.R
 import com.antyzero.paczka.app.ui.model.ParcelUi
+import kotlin.random.Random
 
 class ParcelAdapter : ListAdapter<ParcelUi.Simple, SimpleParcelViewHolder>(ParcelAdapter) {
 
@@ -14,8 +16,14 @@ class ParcelAdapter : ListAdapter<ParcelUi.Simple, SimpleParcelViewHolder>(Parce
             View.inflate(
                 parent.context,
                 R.layout.item_parcel_simple,
-                parent
-            )
+                null
+            ).apply {
+                setBackgroundColor(Color.rgb(
+                    Random.nextInt(255),
+                    Random.nextInt(255),
+                    Random.nextInt(255)
+                ))
+            }
         )
     }
 
