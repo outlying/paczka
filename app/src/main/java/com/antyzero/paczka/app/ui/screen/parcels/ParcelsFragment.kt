@@ -1,31 +1,25 @@
 package com.antyzero.paczka.app.ui.screen.parcels
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.antyzero.paczka.app.R
+import com.antyzero.paczka.app.ui.adapter.ParcelAdapter
+import com.antyzero.paczka.app.ui.model.ParcelUi
+import kotlinx.android.synthetic.main.fragment_parcels.*
 
-class ParcelsFragment : Fragment() {
+class ParcelsFragment : Fragment(R.layout.fragment_parcels) {
 
-    private lateinit var parcelsViewModel: ParcelsViewModel
+    private val parcelsViewModel: ParcelsViewModel by lazy {
+        ViewModelProvider(this).get(ParcelsViewModel::class.java)
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        parcelsViewModel =
-            ViewModelProvider(this).get(ParcelsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_parcels, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        parcelsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        recyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        recyclerView.adapter = ParcelAdapter.apply {
+            submitList((0..5).map { ParcelUi.Simple(it) })
+        }
     }
 }
