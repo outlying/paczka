@@ -1,6 +1,7 @@
 package com.antyzero.paczka.app.ui.adapter
 
 import android.graphics.Color
+import android.view.MotionEvent
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,14 @@ class SimpleParcelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                     Random.nextInt(255)
                 )
             )
+        }
+
+        view.setOnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> v.elevation = 16f
+                MotionEvent.ACTION_UP -> v.elevation = 4f
+            }
+            true
         }
     }
 
